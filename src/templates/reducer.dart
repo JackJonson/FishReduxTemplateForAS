@@ -6,12 +6,12 @@ import 'state.dart';
 Reducer<$nameState> buildReducer() {
   return asReducer(
     <Object, Reducer<$nameState>>{
-      $nameAction.action: _onAction,
+      $nameAction.save: _onSave,
     },
   );
 }
 
-$nameState _onAction($nameState state, Action action) {
+$nameState _onSave($nameState state, Action action) {
   final $nameState newState = state.clone();
   return newState;
 }
