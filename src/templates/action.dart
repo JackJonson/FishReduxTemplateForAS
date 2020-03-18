@@ -5,6 +5,6 @@ enum $nameAction { save }
 
 class $nameActionCreator {
   static Action save(Map<String,dynamic> params) {
-    return const Action($nameAction.save,payload: params);
+    return Action($nameAction.save,payload: params);
   }
 }

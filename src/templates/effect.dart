@@ -4,7 +4,6 @@ import 'state.dart';
 
 Effect<$nameState> buildEffect() {
   return combineEffects(<Object, Effect<$nameState>>{
-    $nameAction.action: _onAction,
   });
 }
 
