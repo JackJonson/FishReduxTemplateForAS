@@ -5,8 +5,19 @@ import 'package:flutter_mtc/common/widget/component/common_body_component/effect
 
 Effect<$nameState> buildEffect() {
   return combineEffects(<Object, Effect<$nameState>>{
+    Lifecycle.initState: _initState,
+    Lifecycle.dispose: _dispose,
   }..addAll(buildCommonBodyEffect<$nameState>()));
 }
 
-void _onAction(Action action, Context<$nameState> ctx) {
+void _initState(Action action, Context<StatisticState> ctx) {
+  _initData() async {
+
+  }
+  ctx.dispatch($nameActionCreator.setInitData(_initData));
+  ctx.dispatch(CommonBodyActionCreator.refreshData());
+}
+
+void _dispose(Action action, Context<StatisticState> ctx) {
+
 }
