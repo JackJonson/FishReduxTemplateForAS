@@ -10,7 +10,7 @@ Effect<$nameState> buildEffect() {
   }..addAll(buildCommonBodyEffect<$nameState>()));
 }
 
-void _initState(Action action, Context<StatisticState> ctx) {
+void _initState(Action action, Context<$nameState> ctx) {
   _initData() async {
 
   }
@@ -18,6 +18,6 @@ void _initState(Action action, Context<StatisticState> ctx) {
   ctx.dispatch(CommonBodyActionCreator.refreshData());
 }
 
-void _dispose(Action action, Context<StatisticState> ctx) {
+void _dispose(Action action, Context<$nameState> ctx) {
 
 }
