@@ -10,7 +10,7 @@ import 'state.dart';
 
 
 Widget buildView(
-    StatisticState state, Dispatch dispatch, ViewService viewService) {
+    $nameState state, Dispatch dispatch, ViewService viewService) {
   ThemeData themeData = Theme.of(viewService.context);
   StringZh stringZh = Utils.getLocale(viewService.context);
   return Scaffold(
