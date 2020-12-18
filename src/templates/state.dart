@@ -1,7 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter_mtc/common/widget/component/common_body_component/state.dart';
+import 'package:flutter_bf_widgets/flutter_bf_widgets.dart';
 
-class $nameState extends CommonBodyState implements Cloneable<CommonBodyState> {
+class $nameState extends CommonReduxBodyState implements Cloneable<CommonReduxBodyState> {
 
   @override
   $nameState clone() {

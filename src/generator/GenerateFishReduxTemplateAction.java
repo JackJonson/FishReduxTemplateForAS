@@ -41,6 +41,7 @@ public class GenerateFishReduxTemplateAction extends AnAction {
     private String psiPath;
     private JDialog jFrame;
     private JTextField nameTextField;
+    private JTextField packageNameTextField;
     private JRadioButton mutable, immutable;
     private ButtonGroup templateGroup, sourceAdapterGroup;
     private JCheckBox actionBox, effectBox, reducerBox, stateBox, viewBox;
@@ -146,6 +147,16 @@ public class GenerateFishReduxTemplateAction extends AnAction {
         nameField.add(prefixBox);
         container.add(nameField);
 
+        JPanel packageNameField = new JPanel();
+        packageNameField.setLayout(new FlowLayout());
+        packageNameField.setBorder(BorderFactory.createTitledBorder("Naming"));
+        JLabel packageNameLabel = new JLabel("Package Name：");
+        packageNameTextField= new JTextField(30);
+        packageNameTextField.addKeyListener(keyListener);
+        packageNameField.add(packageNameLabel);
+        packageNameField.add(packageNameTextField);
+        container.add(packageNameField);
+
         JPanel menu = new JPanel();
         menu.setLayout(new FlowLayout());
 
@@ -245,10 +256,14 @@ public class GenerateFishReduxTemplateAction extends AnAction {
             Messages.showInfoMessage(project, "Please enter the module name", "Info");
             return;
         }
+        if (packageNameTextField.getText() == null || "".equals(packageNameTextField.getText().trim())) {
+            Messages.showInfoMessage(project, "Please enter the package name", "Info");
+            return;
+        }
         dispose();
         clickCreateFile();
         project.getProjectFile().refresh(false, true);
-        Messages.showInfoMessage(project, "Enjoy yourself", "Info");
+//        Messages.showInfoMessage(project, "Enjoy yourself", "Info");
     }
 
     private void clickCreateFile() {
@@ -390,6 +405,8 @@ public class GenerateFishReduxTemplateAction extends AnAction {
         if (!viewBox.isSelected()) {
             content = content.replaceAll("import\\s+'"+prefix+"view.dart';\\s+", "");
         }
+        String packageNameText=packageNameTextField.getText().replaceAll("[A-Z]", "_$0").toLowerCase();
+        content = content.replaceAll("\\$packageName", packageNameText);
         return content;
     }
 

@@ -1,6 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter_mtc/common/widget/component/common_body_component/action.dart';
-import 'package:flutter_mtc/common/widget/component/common_body_component/state.dart';
+import 'package:flutter_bf_widgets/flutter_bf_widgets.dart';
 
 //TODO replace with your own action
 enum $nameAction { save, setInitData, }
