@@ -1,7 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 
-import 'action.dart';
-import 'state.dart';
+import '$prefix_action.dart';
+import '$prefix_state.dart';
 import 'package:flutter_mtc/common/widget/component/common_body_component/reducer.dart';
 
 Reducer<$nameState> buildReducer() {

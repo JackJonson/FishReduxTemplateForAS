@@ -5,8 +5,9 @@ import 'package:flutter_mtc/common/util/utils.dart';
 import 'package:flutter_mtc/common/widget/component/common_body_component/action.dart';
 import 'package:flutter_mtc/common/widget/custom_body_widget.dart';
 import 'package:flutter_mtc/common/widget/custom_title_bar_widget.dart';
-import 'action.dart';
-import 'state.dart';
+
+import '$prefix_action.dart';
+import '$prefix_state.dart';
 
 
 Widget buildView(
